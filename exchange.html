@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crypto-Investment-Dashboard - Exchange</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav__container">
+        <a href="index.html" class="nav__logo">
+          <img src="./assets/logo.png" alt="logo"/>
+        </a>
+        <div class="nav__search">
+          <i class="uil uil-search"></i>
+          <input type="search" placeholder="search"/>
+        </div>
+        <div class="nav__profile-wrapper">
+          <button class="nav__theme-btn">
+            <i class="uil uil-moon"></i>
+          </button>
+          <div class="nav__profile">
+            <div class="nav__profile-photo">
+              <img src="./assets/profile-1.jpg" alt="Profile Photo"/>
+            </div>
+            <h5>Saurabh R</h5>
+            <i class="uil uil-angle-down"></i>
+          </div>
+          <button class="nav__menu-btn">
+            <i class="uil uil-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <menu class="sidebar">
+      <a href="./index.html">
+        <i class="uil uil-create-dashboard"></i>
+        <h5>DASHBOARD</h5>
+      </a>
+      <a href="./exchange.html" class="active">
+        <i class="uil uil-exchange"></i>
+        <h5>EXCHANGE</h5>
+      </a>
+      <a href="wallet/wallet.html">
+        <i class="uil uil-wallet"></i>
+        <h5>WALLET</h5>
+      </a>
+      <a href="transaction/transaction.html">
+        <i class="uil uil-transaction"></i>
+        <h5>TRANSACTIONS</h5>
+      </a>
+      <a href="analytics.html">
+        <i class="uil uil-analysis"></i>
+        <h5>ANALYTICS</h5>
+      </a>
+      <a href="#">
+        <i class="uil uil-message"></i>
+        <h5>MESSAGES</h5>
+      </a>
+      <a href="#">
+        <i class="uil uil-question-circle"></i>
+        <h5>HELP</h5>
+      </a>
+      <a href="#">
+        <i class="uil uil-setting"></i>
+        <h5>SETTINGS</h5>
+      </a>
+      <button class="sidebar__close-btn">
+        <i class="uil uil-multiply"></i>
+      </button>
+    </menu>
+    <main class="main">
+      <header class="main__header">
+        <h1 style="  color: rgb(71, 7, 234);">Cryptocurrency Exchange</h1>
+        <input type="date"/>
+      </header>
+      <div class="exchange-container">
+        <div class="exchange-info">
+          <h2>Understanding Cryptocurrency Exchanges</h2>
+          <p>Cryptocurrency exchanges are platforms where you can buy, sell, and trade cryptocurrencies. They act as intermediaries between buyers and sellers, providing a marketplace for digital assets.</p>
+          <p>Key features of cryptocurrency exchanges include:</p>
+          <ul>
+            <li>Wide variety of supported cryptocurrencies</li>
+            <li>Real-time price updates and market data</li>
+            <li>Secure storage of digital assets</li>
+            <li>Various order types (market, limit, stop-loss)</li>
+            <li>Fiat currency support for easy on/off-ramping</li>
+          </ul>
+          <p>When choosing an exchange, consider factors such as security measures, fees, supported cryptocurrencies, and regulatory compliance in your jurisdiction.</p>
+        </div>
+        <div class="exchange-calculator">
+          <h2>Exchange Calculator</h2>
+          <form id="exchange-form">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" required min="0" step="0.01">
+            <label for="from-currency">From:</label>
+            <select id="from-currency" required>
+              <option value="bitcoin">Bitcoin (BTC)</option>
+              <option value="ethereum">Ethereum (ETH)</option>
+              <option value="tether">Tether (USDT)</option>
+              <option value="binancecoin">Binance Coin (BNB)</option>
+              <option value="ripple">Ripple (XRP)</option>
+            </select>
+            <label for="to-currency">To:</label>
+            <select id="to-currency" required>
+              <option value="bitcoin">Bitcoin (BTC)</option>
+              <option value="ethereum">Ethereum (ETH)</option>
+              <option value="tether">Tether (USDT)</option>
+              <option value="binancecoin">Binance Coin (BNB)</option>
+              <option value="ripple">Ripple (XRP)</option>
+            </select>
+            <button type="submit">Calculate</button>
+          </form>
+          <div id="result"></div>
+        </div>
+      </div>
+    </main>
+    <script src="./main.js"></script>
+    <script>
+      const exchangeForm = document.getElementById('exchange-form');
+      const resultDiv = document.getElementById('result');
+
+      exchangeForm.addEventListener('submit', async(e) => {
+        e.preventDefault();
+        const amount = document.getElementById('amount').value;
+        const fromCurrency = document.getElementById('from-currency').value;
+        const toCurrency = document.getElementById('to-currency').value;
+
+        try {
+          const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=$ {fromCurrency},$ {toCurrency}&vs_currencies=usd`);
+          const data = await response.json();
+
+          const fromRate = data[fromCurrency].usd;
+          const toRate = data[toCurrency].usd;
+
+          const result = (amount * fromRate) / toRate;
+          resultDiv.textContent = `$ {amount} $ {fromCurrency.toUpperCase()} = $ {result.toFixed(8)} $ {toCurrency.toUpperCase()}`;
+        } catch (error) {
+          console.error('Error fetching exchange rates:', error);
+          resultDiv.textContent = 'Error fetching exchange rates. Please try again.';
+        }
+      });
+    </script>
+  </body>
+</html>

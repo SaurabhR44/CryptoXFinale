@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crypto-Investment-Dashboard</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="./transaction.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav__container">
+        <a href="../index.html" class="nav__logo">
+          <img src="../assets/logo.png" alt="logo"/>
+        </a>
+        <div class="nav__search">
+          <i class="uil uil-search"></i>
+          <input type="search" placeholder="search"/>
+        </div>
+        <div class="nav__profile-wrapper">
+          <button class="nav__theme-btn">
+            <i class="uil uil-moon"></i>
+          </button>
+          <div class="nav__profile">
+            <div class="nav__profile-photo">
+              <img src="../assets/profile-1.jpg" alt="Profile Photo"/>
+            </div>
+            <h5>Saurabh R</h5>
+            <i class="uil uil-angle-down"></i>
+          </div>
+          <button class="nav__menu-btn">
+            <i class="uil uil-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <menu class="sidebar">
+      <a href="../index.html">
+        <i class="uil uil-create-dashboard"></i>
+        <h5>DASHBOARD</h5>
+      </a>
+      <a href="../exchange.html">
+        <i class="uil uil-exchange"></i>
+        <h5>EXCHANGE</h5>
+      </a>
+      <a href="../wallet/wallet.html">
+        <i class="uil uil-wallet"></i>
+        <h5>WALLET</h5>
+      </a>
+      <a href="transaction/transaction.html" class="active">
+        <i class="uil uil-transaction"></i>
+        <h5>TRANSACTIONS</h5>
+      </a>
+      <a href="../analytics.html">
+        <i class="uil uil-analysis"></i>
+        <h5>ANALYTICS</h5>
+      </a>
+      <a href="">
+        <i class="uil uil-message"></i>
+        <h5>MESSAGES</h5>
+      </a>
+      <a href="">
+        <i class="uil uil-question-circle"></i>
+        <h5>HELP</h5>
+      </a>
+      <a href="">
+        <i class="uil uil-setting"></i>
+        <h5>SETTINGS</h5>
+      </a>
+      <button class="sidebar__close-btn">
+        <i class="uil uil-multiply"></i>
+      </button>
+    </menu>
+
+    <table class="transactionsTable">
+      <thead>
+        <tr>
+          <th>TRANSACTION ID</th>
+          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
+          <th>COIN</th>
+          <th>AMOUNT</th>
+          <th>Notes</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#23453666324</td>
+          <td>23/08/2024</td>
+          <td>Will Smith</td>
+          <td>John Stewards</td>
+          <td>Bitcoin</td>
+          <td>0.3432</td>
+          <td>Part Payment for a Car</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#34567890123</td>
+          <td>15/09/2024</td>
+          <td>Jane Doe</td>
+          <td>Mike Johnson</td>
+          <td>Ethereum</td>
+          <td>0.5654</td>
+          <td>Full Payment for a Laptop</td>
+          <td class="danger">Failed</td>
+        </tr>
+        <tr>
+          <td>#45678901234</td>
+          <td>22/09/2024</td>
+          <td>Chris Evans</td>
+          <td>Sarah Parker</td>
+          <td>Litecoin</td>
+          <td>1.2345</td>
+          <td>Payment for a Vacation</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#56789012345</td>
+          <td>30/09/2024</td>
+          <td>Emma Watson</td>
+          <td>Tom Hardy</td>
+          <td>Bitcoin</td>
+          <td>0.7890</td>
+          <td>Deposit for Rent</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#67890123456</td>
+          <td>01/10/2024</td>
+          <td>Robert Downey Jr.</td>
+          <td>Chris Hemsworth</td>
+          <td>Ripple</td>
+          <td>2.0000</td>
+          <td>Payment for a Car</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#78901234567</td>
+          <td>10/10/2024</td>
+          <td>Scarlett Johansson</td>
+          <td>Mark Ruffalo</td>
+          <td>Dogecoin</td>
+          <td>1500.50</td>
+          <td>Gift for a Friend</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#89012345678</td>
+          <td>18/10/2024</td>
+          <td>Gal Gadot</td>
+          <td>Ben Affleck</td>
+          <td>Ethereum</td>
+          <td>0.4567</td>
+          <td>Payment for a Service</td>
+          <td class="danger">Failed</td>
+        </tr>
+        <tr>
+          <td>#90123456789</td>
+          <td>25/10/2024</td>
+          <td>Hugh Jackman</td>
+          <td>Jessica Chastain</td>
+          <td>Bitcoin</td>
+          <td>0.1234</td>
+          <td>Partial Payment for a House</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#01234567890</td>
+          <td>29/10/2024</td>
+          <td>Angelina Jolie</td>
+          <td>Brad Pitt</td>
+          <td>Cardano</td>
+          <td>0.7890</td>
+          <td>Investment in Startup</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#12345678901</td>
+          <td>05/11/2024</td>
+          <td>Leonardo DiCaprio</td>
+          <td>Kate Winslet</td>
+          <td>Bitcoin</td>
+          <td>0.9876</td>
+          <td>Payment for Art</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#23456789012</td>
+          <td>12/11/2024</td>
+          <td>Johnny Depp</td>
+          <td>Amber Heard</td>
+          <td>Ethereum</td>
+          <td>1.2345</td>
+          <td>Loan Payment</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#34567890123</td>
+          <td>20/11/2024</td>
+          <td>Chris Pratt</td>
+          <td>Elizabeth Banks</td>
+          <td>Litecoin</td>
+          <td>0.6543</td>
+          <td>Payment for Merchandise</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#45678901234</td>
+          <td>28/11/2024</td>
+          <td>Tom Hanks</td>
+          <td>Meg Ryan</td>
+          <td>Ripple</td>
+          <td>3.1415</td>
+          <td>Donation</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#56789012345</td>
+          <td>05/12/2024</td>
+          <td>Will Ferrell</td>
+          <td>Kristen Wiig</td>
+          <td>Dogecoin</td>
+          <td>2500.00</td>
+          <td>Purchase of a New Vehicle</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#67890123456</td>
+          <td>12/12/2024</td>
+          <td>Jennifer Aniston</td>
+          <td>Courteney Cox</td>
+          <td>Ethereum</td>
+          <td>0.4321</td>
+          <td>Gift for Charity</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#78901234567</td>
+          <td>20/12/2024</td>
+          <td>Matt Damon</td>
+          <td>Ben Affleck</td>
+          <td>Bitcoin</td>
+          <td>1.1111</td>
+          <td>Investment in Real Estate</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#89012345678</td>
+          <td>27/12/2024</td>
+          <td>Julia Roberts</td>
+          <td>Hugh Grant</td>
+          <td>Cardano</td>
+          <td>0.7654</td>
+          <td>Payment for a Movie Role</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#90123456789</td>
+          <td>02/01/2025</td>
+          <td>Chris Hemsworth</td>
+          <td>Tom Hiddleston</td>
+          <td>Litecoin</td>
+          <td>2.2222</td>
+          <td>Payment for a Fitness Program</td>
+          <td class="suc">Completed!</td>
+        </tr>
+        <tr>
+          <td>#01234567890</td>
+          <td>10/01/2025</td>
+          <td>Emma Stone</td>
+          <td>Ryan Gosling</td>
+          <td>Bitcoin</td>
+          <td>0.9870</td>
+          <td>Payment for a Charity Event</td>
+          <td class="suc">Completed!</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.1/chart.min.js"
+    integrity="sha512-O2fWHvFel3xjQSi9FyzKXWLTvnom+lOYR/AUEThL/fbP4hv1Lo5LCFCGuTXBRyKC4K4DJldg5kxptkgXAzUpvA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="../main.js"></script>
+</html>

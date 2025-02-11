@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crypto-Investment-Dashboard - Analytics</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <nav style="">
+            <div class="container nav__container">
+                <a href="index.html" class="nav__logo">
+                    <img src="Designer.png" alt="logo">
+                </a>
+                <div class="nav__search">
+                    <i class="uil uil-search"></i>
+                    <input type="search" placeholder="search">
+                </div>
+                <div class="nav__profile-wrapper">
+                    <button class="nav__theme-btn">
+                        <i class="uil uil-moon"></i>
+                    </button>
+                    <div class="nav__profile">
+                        <div class="nav__profile-photo">
+                            <img src="./assets/profile-1.jpg" alt="Profile Photo">
+                        </div>
+                        <h5>Saurabh R</h5>
+                        <i class="uil uil-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <menu class="sidebar">
+            <a href="index.html">
+                <i class="uil uil-create-dashboard"></i>
+                <h5>DASHBOARD</h5>
+            </a>
+            <a href="exchange.html">
+                <i class="uil uil-exchange"></i>
+                <h5>EXCHANGE</h5>
+            </a>
+            <a href="wallet/wallet.html">
+                <i class="uil uil-wallet"></i>
+                <h5>WALLET</h5>
+            </a>
+            <a href="transaction/transaction.html">
+                <i class="uil uil-transaction"></i>
+                <h5>TRANSACTIONS</h5>
+            </a>
+            <a href="analytics.html" class="active">
+                <i class="uil uil-analysis"></i>
+                <h5>ANALYTICS</h5>
+            </a>
+            <a href="#">
+                <i class="uil uil-message"></i>
+                <h5>MESSAGES</h5>
+            </a>
+            <a href="#">
+                <i class="uil uil-question-circle"></i>
+                <h5>HELP</h5>
+            </a>
+            <a href="#">
+                <i class="uil uil-setting"></i>
+                <h5>SETTINGS</h5>
+            </a>
+
+        </menu>
+        <main class="main">
+            <header class="main__header">
+                <h1 style="color: rgb(71, 7, 234);">Analytics</h1>
+                <input type="date">
+            </header>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/BTC.png" alt="Bitcoin">
+                            <h3>Price Tracking</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Real-time price changes for top cryptocurrencies. This chart helps you monitor market trends and make informed investment decisions.</p>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/ETH.png" alt="Market Cap">
+                            <h3>Market Cap</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Live market capitalization data for major cryptocurrencies. This information helps you understand the relative size and dominance of different cryptocurrencies in the market.</p>
+                    <div class="chart-container">
+                        <canvas id="marketCapChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/Litecoin_Logo.jpg" alt="Volume">
+                            <h3>Volume (24h)</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Real-time 24-hour trading volume. This metric indicates market activity and liquidity, helping you gauge the current interest in cryptocurrencies.</p>
+                    <div class="chart-container">
+                        <canvas id="volumeChart"></canvas>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/polkadot-coin-logo-icon-cryptocurrency-free-vector.jpg" alt="Fear and Greed">
+                            <h3>Fear and Greed Index</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Current market sentiment indicator. This index helps you understand whether the market is driven by fear (selling pressure) or greed (buying pressure), which can influence price movements.</p>
+                    <div id="fearGreedIndex">
+                        <h2 id="fearGreedValue"></h2>
+                        <p id="fearGreedText"></p>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/EURO.png" alt="Top Gainers and Losers">
+                            <h3>Top Gainers and Losers</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Real-time list of the best and worst performing cryptocurrencies in the last 24 hours. This information can help you identify potential investment opportunities or risks.</p>
+                    <div id="topGainersLosers">
+                        <h4>Top Gainers</h4>
+                        <ul id="topGainers"></ul>
+                        <h4>Top Losers</h4>
+                        <ul id="topLosers"></ul>
+                    </div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-card__header">
+                        <div class="analytics-card__header-left">
+                            <img src="./assets/cronos-cro-logo.png" alt="News">
+                            <h3>Latest News & Social Sentiment</h3>
+                        </div>
+                    </div>
+                    <p class="feature-description">Up-to-date news and social media sentiment analysis. This feature helps you stay informed about the latest developments in the crypto world and gauge public opinion, which can influence market trends.</p>
+                    <div id="newsAndSentiment">
+                        <ul id="newsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section class="tutorials" id="tutorials" style="height: 600px;justify-content: center;align-content: center">
+            <header class="tutorials__header">
+                <h2>Crypto Investment Tutorials</h2>
+                <a href="http://www.youtube.com">More <i class="uil uil-angle-right-b"></i></a>
+            </header>
+            <article class="tutorial">
+                <div class="tutorial__thumbnail">
+                    <img src="https://img.youtube.com/vi/Yb6825iv0Vk/0.jpg" alt="Crypto Investment Basics">
+                </div>
+                <div class="tutorial__info">
+                    <h4>Crypto Investment Basics</h4>
+                    <p>Learn the fundamentals of cryptocurrency investing</p>
+                    <a href="https://www.youtube.com/watch?v=Yb6825iv0Vk" target="_blank" class="btn btn-primary">Watch Now</a>
+                </div>
+            </article>
+            <article class="tutorial">
+                <div class="tutorial__thumbnail">
+                    <img src="https://img.youtube.com/vi/Lhf_2gJJS1I/0.jpg" alt="Bitcoin Trading Strategies">
+                </div>
+                <div class="tutorial__info">
+                    <h4>Bitcoin Trading Strategies</h4>
+                    <p>Advanced techniques for trading Bitcoin</p>
+                    <a href="https://www.youtube.com/watch?v=Lhf_2gJJS1I" target="_blank" class="btn btn-primary">Watch Now</a>
+                </div>
+            </article>
+            <article class="tutorial">
+                <div class="tutorial__thumbnail">
+                    <img src="https://img.youtube.com/vi/1YyAzVmP9xQ/0.jpg" alt="Ethereum Investment Guide">
+                </div>
+                <div class="tutorial__info">
+                    <h4>Ethereum Investment Guide</h4>
+                    <p>Comprehensive guide to investing in Ethereum</p>
+                    <a href="https://www.youtube.com/watch?v=1YyAzVmP9xQ" target="_blank" class="btn btn-primary">Watch Now</a>
+                </div>
+            </article>
+        </section>
+        <script src="main2.js"></script>
+    </body>
+</html>
